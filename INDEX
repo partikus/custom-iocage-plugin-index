@@ -2,11 +2,31 @@
 	"homeassistant": {
 		"MANIFEST": "homeassistant.json",
 		"description": "Open source home automation that puts local control and privacy first.",
-		"icon": "https://iocage.kruczek.it/icons/homeassistant.png",
+		"icon": "https://github.com/partikus/custom-iocage-plugin-index/blob/master/icons/homeassistant.png?raw=true",
 		"name": "Home Assistant Core",
 		"primary_pkg": null,
 		"official": false,
 		"category": "home-automation",
 		"homepage": "https://www.home-assistant.io/"
+	},
+	"node-red": {
+        "MANIFEST": "node-red.json",
+        "description": "Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.",
+        "icon": "https://github.com/partikus/custom-iocage-plugin-index/blob/master/icons/node-red.png?raw=true",
+        "primary_pkg": null,
+        "name": "Node-RED",
+        "official": false,
+        "category": "home-automation",
+        "homepage": "https://nodered.org/"
+    },
+	"zigbee2mqtt": {
+		"MANIFEST": "zigbee2mqtt.json",
+		"description": "Mosquitto + zigbee2mqtt",
+		"icon": "https://github.com/partikus/custom-iocage-plugin-index/blob/master/icons/zigbee2mqtt.png?raw=true",
+		"name": "Zigbee2Mqt",
+		"official": false,
+		"primary_pkg": "zigbee2mqtt",
+		"category": "home-automation",
+		"homepage": "https://www.zigbee2mqtt.io"
 	}
 }
