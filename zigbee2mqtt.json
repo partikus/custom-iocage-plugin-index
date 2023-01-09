@@ -12,7 +12,10 @@
         "mosquitto",
         "git",
         "nano",
-        "npm"
+        "npm",
+        "gmake",
+        "gcc",
+        "htop"
     ],
     "packagesite": "http://pkg.FreeBSD.org/${ABI}/latest",
     "fingerprints": {
