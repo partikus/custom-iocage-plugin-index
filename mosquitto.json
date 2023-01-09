@@ -1,7 +1,7 @@
 {
-    "name": "zigbee2mqtt",
+    "name": "mosquitto",
     "release": "13.1-RELEASE",
-    "artifact": "https://github.com/partikus/custom-iocage-zigbee2mqtt.git",
+    "artifact": "https://github.com/partikus/custom-iocage-mosquitto.git",
     "official": false,
     "properties": {
         "priority": "98",
@@ -9,12 +9,7 @@
         "dhcp": "1"
     },
     "pkgs": [
-        "git",
-        "nano",
-        "npm",
-        "gmake",
-        "gcc",
-        "htop"
+        "mosquitto"
     ],
     "packagesite": "http://pkg.FreeBSD.org/${ABI}/latest",
     "fingerprints": {
