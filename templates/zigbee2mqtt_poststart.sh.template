@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -ex
+
+function get_tty () {
+    local vendor="${1}"
+    local product="${2}"
+    sysctl dev.uchcom dev.umodem | grep "vendor=${vendor} product=${product}" | sed -r 's/.*ttyname=([^\s]+) .*/\1/'
+}
+
+
+function create_symlink () {
+    local source="${1}"
+    # failsafe
+    if [[ "${source}" == 'tty' ]]; then return; fi
+    local target=$("/mnt/${POOLNAME}/iocage/jails/${JAILNAME}/root/dev/${2}")
+    if [[ -e "${target}" ]]; then rm -f "${target}"; fi
+    ln -s "${source}" "${target}"
+}
+
+# rflink is an arduino mega
+create_symlink "tty$(get_tty '0x2341' '0x0010')" "ttyUrflink"
+# zigbee is a Texas Instrument CC2531
+create_symlink "tty$(get_tty '0x0451' '0x16a8')" "ttyUzigbee"
+# zwave is a Z-Stick Gen 5
+# note: it needs the 'cua' device in domoticz, not the tty device
+create_symlink "cua$(get_tty '0x0658' '0x0200')" "cuaUzwave"
+# zigbee is a cc2652p
+create_symlink "tty$(get_tty '0x1a86' '0x7523')" "ttyUzigbee"
