@@ -21,6 +21,8 @@ JAILNAME="${name}"
 POOLNAME=$(iocage get -p)
 export JAILNAME POOLNAME
 
+rm -rf "${prestart_script_path}" "${poststart_script_path}" || true
+
 envsubst < "${templates_folder}/zigbee2mqtt_prestart.sh.template" > "${prestart_script_path}"
 envsubst < "${templates_folder}/zigbee2mqtt_poststart.sh.template" > "${poststart_script_path}"
 
