@@ -14,7 +14,8 @@
         "npm",
         "gmake",
         "gcc",
-        "htop"
+        "htop",
+        "bash"
     ],
     "packagesite": "http://pkg.FreeBSD.org/${ABI}/latest",
     "fingerprints": {
