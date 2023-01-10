@@ -23,6 +23,8 @@ export JAILNAME POOLNAME
 envsubst < "${templates_folder}/zigbee2mqtt_poststart.sh.template" > "${prestart_script_path}"
 envsubst < "${templates_folder}/zigbee2mqtt_prestart.sh.template" > "${poststart_script_path}"
 
+chmod +x "${prestart_script_path}" "${poststart_script_path}"
+
 iocage set exec_poststart="${prestart_script_path}" "${name}"
 iocage set exec_prestart="${poststart_script_path}" "${name}"
 iocage set devfs_ruleset=5 "${name}"
