@@ -28,8 +28,8 @@ envsubst < "${templates_folder}/zigbee2mqtt_poststart.sh.template" > "${poststar
 
 chmod +x "${prestart_script_path}" "${poststart_script_path}"
 
-iocage set exec_poststart="${prestart_script_path}" "${name}"
-iocage set exec_prestart="${poststart_script_path}" "${name}"
+iocage set exec_prestart="${prestart_script_path}" "${name}"
+iocage set exec_poststart="${poststart_script_path}" "${name}"
 iocage set devfs_ruleset=5 "${name}"
 iocage set boot=on "${name}"
 iocage set interfaces="${interfaces}" "${name}"

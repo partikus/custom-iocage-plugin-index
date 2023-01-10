@@ -12,10 +12,10 @@ function get_tty () {
 function create_symlink () {
     local source="${1}"
     # failsafe
-    if [[ "\${source}" == 'tty' ]]; then return; fi
+    if [[ "$${source}" == 'tty' ]]; then return; fi
     local target=$("/mnt/${POOLNAME}/iocage/jails/${JAILNAME}/root/dev/${2}")
-    if [[ -e "\${target}" ]]; then rm -f "\${target}"; fi
-    ln -s "\${source}" "\${target}"
+    if [[ -e "$${target}" ]]; then rm -f "$${target}"; fi
+    ln -s "$${source}" "$${target}"
 }
 
 # rflink is an arduino mega
