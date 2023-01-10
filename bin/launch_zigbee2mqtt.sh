@@ -3,6 +3,7 @@
 set -ex
 
 name=${1:-"z2m"}
+interfaces=${2:-"vnet0:bridge20"}
 
 # absolute path of the folder containng the current script
 script_folder="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -29,5 +30,8 @@ iocage set exec_poststart="${prestart_script_path}" "${name}"
 iocage set exec_prestart="${poststart_script_path}" "${name}"
 iocage set devfs_ruleset=5 "${name}"
 iocage set boot=on "${name}"
+iocage set interfaces="${interfaces}" "${name}"
+iocage set vnet_default_interface="auto" "${name}"
+iocage set vnet="on" "${name}"
 
 iocage start "${name}"
