@@ -19,6 +19,8 @@ iocage stop "${name}"
 
 JAILNAME="${name}"
 POOLNAME=$(iocage get -p)
+DOLLAR="$"
+
 export JAILNAME POOLNAME
 
 rm -rf "${prestart_script_path}" "${poststart_script_path}" || true
