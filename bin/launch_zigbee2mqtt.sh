@@ -21,7 +21,7 @@ JAILNAME="${name}"
 POOLNAME=$(iocage get -p)
 DOLLAR="$"
 
-export JAILNAME POOLNAME
+export JAILNAME POOLNAME DOLLAR
 
 rm -rf "${prestart_script_path}" "${poststart_script_path}" || true
 
