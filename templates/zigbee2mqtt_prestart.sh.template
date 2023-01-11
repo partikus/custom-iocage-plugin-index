@@ -7,9 +7,9 @@ if ! grep -q "devfsrules_jail=5" /etc/devfs.rules; then
     cat <<"EOF" >>  /etc/devfs.rules
 
 [devfsrules_jail=5]
-add include $devfsrules_hide_all
-add include $devfsrules_unhide_basic
-add include $devfsrules_unhide_login
+add include ${DOLLAR}devfsrules_hide_all
+add include ${DOLLAR}devfsrules_unhide_basic
+add include ${DOLLAR}devfsrules_unhide_login
 add path zfs unhide
 add path 'tty*' unhide
 add path 'ugen*' unhide
