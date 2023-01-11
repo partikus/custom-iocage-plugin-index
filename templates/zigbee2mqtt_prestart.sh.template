@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -x
 
 # add devfs rules to allow USB devices to be seen from within domoticz
 if ! grep -q "devfsrules_jail=5" /etc/devfs.rules; then
