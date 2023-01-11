@@ -13,7 +13,7 @@ function create_symlink () {
     local source="${DOLLAR}{1}"
     # failsafe
     if [[ "${DOLLAR}{source}" == 'tty' ]]; then return; fi
-    local target=$("/mnt/${POOLNAME}/iocage/jails/${JAILNAME}/root/dev/${2}")
+    local target="/mnt/${POOLNAME}/iocage/jails/${JAILNAME}/root/dev/${2}"
     if [[ -e "${DOLLAR}{target}" ]]; then rm -f "${DOLLAR}{target}"; fi
     ln -s "${DOLLAR}{source}" "${DOLLAR}{target}"
 }
